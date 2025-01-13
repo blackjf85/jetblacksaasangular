@@ -12,11 +12,11 @@ export class HttpService {
     return this.http.get<T>(url);
   }
 
-  post<T>(url: string, body: any): Observable<T> {
+  post<T, R = unknown>(url: string, body: R): Observable<T> {
     return this.http.post<T>(url, body);
   }
 
-  put<T>(url: string, body: any): Observable<T> {
+  put<T, R = unknown>(url: string, body: R): Observable<T> {
     return this.http.put<T>(url, body);
   }
 
