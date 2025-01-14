@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
+import { ButtonComponent } from '@shared/button/button.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, ButtonComponent],
   template: `
     <div class="login-container">
       <h2>Login</h2>
@@ -34,9 +35,9 @@ import { AuthService } from '../core/services/auth.service';
             autocomplete="current-password"
           />
         </div>
-        <button type="submit" [disabled]="loading">
+        <jb-button type="submit" [disabled]="loading">
           {{ loading ? 'Logging in...' : 'Login' }}
-        </button>
+        </jb-button>
         <div *ngIf="errorMessage" class="error-message">
           {{ errorMessage }}
         </div>

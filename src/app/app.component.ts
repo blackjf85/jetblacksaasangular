@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './core/services/auth.service';
+import { ButtonComponent } from '@shared/button/button.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, CommonModule],
+  imports: [RouterOutlet, RouterLink, CommonModule, ButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

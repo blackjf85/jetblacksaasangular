@@ -3,7 +3,9 @@
   <a routerLink="/about">About</a>
   <a *ngIf="!isAuthenticated" routerLink="/login">Login</a>
   <a *ngIf="isAuthenticated" routerLink="/signup">Sign Up</a>
-  <button *ngIf="isAuthenticated" (click)="logout()">Logout</button>
+  <jb-button *ngIf="isAuthenticated" (click)="logout()" variant="secondary"
+    >Logout</jb-button
+  >
 </nav>
 
 <div class="app-container">
