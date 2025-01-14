@@ -32,4 +32,46 @@
     <jb-button variant="icon" ariaLabel="Settings" icon="settings"> </jb-button>
     <p>Used for icon-only actions or compact interfaces</p>
   </div>
+
+  <div class="button-group">
+    <h3>Text Input</h3>
+    <jb-input
+      type="number"
+      label="Enter your PIN"
+      placeholder="PIN"
+      [(value)]="demoInputValue"
+      [isPin]="true"
+    ></jb-input>
+  </div>
+
+  <div class="button-group">
+    <h3>Number Input</h3>
+    <jb-input
+      type="number"
+      label="Age"
+      placeholder="Enter your age"
+      formControlName="age"
+    ></jb-input>
+  </div>
+
+  <div class="button-group">
+    <h3>Password Input</h3>
+    <jb-input
+      type="password"
+      label="Password"
+      placeholder="Enter your password"
+      formControlName="password"
+    ></jb-input>
+  </div>
+
+  <div class="button-group">
+    <h3>Input with Error</h3>
+    <jb-input
+      type="text"
+      label="Email"
+      placeholder="Enter your email"
+      formControlName="email"
+      error="Please enter a valid email address"
+    ></jb-input>
+  </div>
 </jb-card>
