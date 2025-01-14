@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap');
 
 /* Color Variables */
-$primary: #000000;
-$secondary: #ffd700;
-$accent: #ff4500;
-$background: #ffffff;
-$text: #333333;
+:root {
+  --primary: #000000;
+  --secondary: #ffd700;
+  --accent: #ff4500;
+  --background: #ffffff;
+  --text: #333333;
+}
 
 /* Typography */
 :root {
@@ -35,8 +37,8 @@ $text: #333333;
 body {
   margin: 0;
   padding: 0;
-  background-color: $background;
-  color: $text;
+  background-color: var(--background);
+  color: var(--text);
   font-size: 1rem;
 }
 
@@ -89,7 +91,7 @@ h6 {
 
 /* Accessibility */
 :focus-visible {
-  outline: 2px solid $accent;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -103,30 +105,30 @@ $transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 
 /* Utility Classes */
 .text-primary {
-  color: $primary;
+  color: var(--primary);
 }
 .text-secondary {
-  color: $secondary;
+  color: var(--secondary);
 }
 .text-accent {
-  color: $accent;
+  color: var(--accent);
 }
 .text-background {
-  color: $background;
+  color: var(--background);
 }
 .text-default {
-  color: $text;
+  color: var(--text);
 }
 
 .bg-primary {
-  background-color: $primary;
+  background-color: var(--primary);
 }
 .bg-secondary {
-  background-color: $secondary;
+  background-color: var(--secondary);
 }
 .bg-accent {
-  background-color: $accent;
+  background-color: var(--accent);
 }
 .bg-background {
-  background-color: $background;
+  background-color: var(--background);
 }

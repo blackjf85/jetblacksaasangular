@@ -23,9 +23,9 @@
         autocomplete="new-password"
       />
     </div>
-    <button type="submit" [disabled]="loading">
-      {{ loading ? 'Signing up...' : 'Sign Up' }}
-    </button>
+    <jb-button type="submit" [disabled]="loading">
+      {{ loading ? 'Signing up...' : 'Sign up' }}
+    </jb-button>
     <div *ngIf="errorMessage" class="error-message">
       {{ errorMessage }}
     </div>

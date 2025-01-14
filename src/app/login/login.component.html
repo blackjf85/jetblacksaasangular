@@ -23,9 +23,14 @@
         autocomplete="current-password"
       />
     </div>
-    <button type="submit" [disabled]="loading">
+    <jb-button
+      type="submit"
+      [disabled]="loading"
+      variant="primary"
+      [isLoading]="loading"
+    >
       {{ loading ? 'Logging in...' : 'Login' }}
-    </button>
+    </jb-button>
     <div *ngIf="errorMessage" class="error-message">
       {{ errorMessage }}
     </div>
