@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
-import { ButtonComponent } from '@shared/button/button.component';
+import { ButtonComponent } from '../../../libs/shared/ui-components/src/lib/ui-components';
 
 @Component({
   selector: 'app-signup',
