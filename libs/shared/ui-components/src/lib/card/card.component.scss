@@ -1,0 +1,39 @@
+@use '../../../../../../src/styles' as *;
+
+.card {
+  background-color: var(--background);
+  border-radius: var(--space-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all $transition-duration $transition-easing;
+
+  &.with-header {
+    .card-header {
+      padding: var(--space-md);
+      background-color: var(--primary);
+      color: var(--background);
+
+      .card-title {
+        margin: 0;
+        font-size: var(--h4);
+      }
+    }
+  }
+
+  .card-body {
+    padding: var(--space-md);
+  }
+
+  &.with-footer {
+    .card-footer {
+      padding: var(--space-md);
+      background-color: var(--background);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+}
