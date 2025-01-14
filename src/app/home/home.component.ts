@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '@shared/button/button.component';
-import { CardComponent } from '@shared/card/card.component';
+import {
+  ButtonComponent,
+  CardComponent,
+} from '../../../libs/shared/ui-components/src/lib/ui-components';
 
 @Component({
   selector: 'app-home',

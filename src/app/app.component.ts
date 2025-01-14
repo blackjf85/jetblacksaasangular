@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './core/services/auth.service';
-import { ButtonComponent } from '@shared/button/button.component';
+import { ButtonComponent } from '../../libs/shared/ui-components/src/lib/ui-components';
 
 @Component({
   selector: 'app-root',
