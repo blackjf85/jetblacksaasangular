@@ -12,8 +12,7 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "auth": ["libs/auth/src/index.ts"],
-      "@shared/*": ["libs/shared/ui-components/src/lib/*"]
+      "auth": ["libs/auth/src/index.ts"]
     }
   }
 }
