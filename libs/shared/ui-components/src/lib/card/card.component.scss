@@ -3,7 +3,7 @@
 .card {
   background-color: var(--background);
   border-radius: var(--space-sm);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(var(--shadow-color), 0.1);
   overflow: hidden;
   transition: all $transition-duration $transition-easing;
 
@@ -33,7 +33,7 @@
   }
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(var(--shadow-color), 0.15);
     transform: translateY(-2px);
   }
 }

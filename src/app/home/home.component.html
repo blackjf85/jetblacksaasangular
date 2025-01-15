@@ -1,3 +1,12 @@
+<div class="theme-toggle">
+  <jb-button
+    variant="icon"
+    [icon]="isDarkMode ? 'light_mode' : 'dark_mode'"
+    (click)="toggleTheme()"
+    ariaLabel="Toggle dark mode"
+  ></jb-button>
+</div>
+
 <jb-card header="Button Variants">
   <div class="button-group">
     <h3>Primary Button</h3>
