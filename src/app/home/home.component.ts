@@ -1,22 +1,31 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import {
   ButtonComponent,
   CardComponent,
   InputComponent,
+  ModalComponent,
 } from '../../../libs/shared/ui-components/src/lib/ui-components';
 import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonComponent, CardComponent, InputComponent],
+  imports: [
+    CommonModule,
+    ButtonComponent,
+    CardComponent,
+    InputComponent,
+    ModalComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
   demoInputValue = '';
   isDarkMode = false;
+  showModal = false;
   private authService = inject(AuthService);
   private router = inject(Router);
 
@@ -49,5 +58,13 @@ export class HomeComponent {
   onDemoSubmit(event: Event) {
     event.preventDefault();
     console.log('Demo form submitted');
+  }
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 }
