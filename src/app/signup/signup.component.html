@@ -1,34 +1,44 @@
-<div class="signup-container">
-  <h2>Sign Up</h2>
-  <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        [(ngModel)]="credentials.email"
-        name="email"
-        required
-        autocomplete="email"
-      />
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        id="password"
-        [(ngModel)]="credentials.password"
-        name="password"
-        required
-        autocomplete="new-password"
-      />
-    </div>
-    <jb-button type="submit" [disabled]="loading">
+<jb-card header="Sign Up" class="with-footer">
+  <form class="auth-form" (ngSubmit)="onSubmit()">
+    <jb-input
+      type="text"
+      inputMode="email"
+      label="Email"
+      placeholder="Enter your email"
+      [(ngModel)]="credentials.email"
+      name="email"
+      [required]="true"
+      autocomplete="email"
+      [errorMessage]="errors['email'] || ''"
+      [hasError]="!!errors['email']"
+      [disabled]="loading"
+    ></jb-input>
+
+    <jb-input
+      type="password"
+      label="Password"
+      placeholder="Create a password"
+      [(ngModel)]="credentials.password"
+      name="password"
+      [required]="true"
+      autocomplete="new-password"
+      [errorMessage]="errors['password'] || ''"
+      [hasError]="!!errors['password']"
+      [disabled]="loading"
+    ></jb-input>
+
+    <jb-button type="submit" variant="primary" [disabled]="loading">
       {{ loading ? 'Signing up...' : 'Sign up' }}
     </jb-button>
-    <div *ngIf="errorMessage" class="error-message">
+
+    @if (errorMessage) {
+    <div class="error-message">
       {{ errorMessage }}
     </div>
+    }
   </form>
-  <p>Already have an account? <a routerLink="/login">Login</a></p>
-</div>
+
+  <div slot="footer" class="auth-footer">
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </div>
+</jb-card>

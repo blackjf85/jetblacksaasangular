@@ -1,1 +1,22 @@
-/* Login component styles will be handled by global styles */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-xl);
+  background: var(--background);
+}
+
+:host-context(.dark) {
+  background: var(--background-dark);
+}
+
+jb-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.auth-form {
+  margin-bottom: var(--space-md);
+}

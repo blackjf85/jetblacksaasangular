@@ -28,8 +28,11 @@ export class InputComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() required = false;
   @Input() label = '';
-  @Input() error = '';
+  @Input() errorMessage: string | null = '';
+  @Input() hasError = false;
   @Input() isPin = false;
+  @Input() inputMode?: string;
+  @Input() autocomplete?: string;
 
   private _value: string | number = '';
   displayValue = '';

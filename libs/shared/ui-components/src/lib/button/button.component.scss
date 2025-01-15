@@ -22,7 +22,7 @@
 
   &--primary {
     background-color: var(--primary);
-    color: var(--secondary);
+    color: var(--background);
 
     &:hover:not(:disabled) {
       background-color: color-mix(in srgb, var(--primary) 90%, white 10%);
