@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   ButtonComponent,
   CardComponent,
   InputComponent,
 } from '../../../libs/shared/ui-components/src/lib/ui-components';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +17,8 @@ import {
 export class HomeComponent {
   demoInputValue = '';
   isDarkMode = false;
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
   ngOnInit() {
     const savedTheme = localStorage.getItem('theme');
@@ -31,5 +35,14 @@ export class HomeComponent {
     this.isDarkMode = !this.isDarkMode;
     document.documentElement.classList.toggle('dark', this.isDarkMode);
     localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  }
+
+  async logout() {
+    try {
+      await this.authService.logout();
+      this.router.navigate(['/login']);
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
   }
 }

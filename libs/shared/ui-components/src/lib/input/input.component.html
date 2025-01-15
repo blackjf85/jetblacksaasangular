@@ -12,7 +12,7 @@
     (input)="onInput($event)"
     [attr.inputmode]="isPin ? 'none' : null"
   />
-  @if (error) {
-  <div class="input-error">{{ error }}</div>
+  @if (errorMessage) {
+  <div class="input-error">{{ errorMessage }}</div>
   }
 </div>

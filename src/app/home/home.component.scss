@@ -1,8 +1,6 @@
-.theme-toggle {
-  position: fixed;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
-  z-index: 1000;
+.floating-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
 
   jb-button {
     background: transparent;

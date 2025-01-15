@@ -1,9 +1,15 @@
-<div class="theme-toggle">
+<div class="floating-buttons">
   <jb-button
     variant="icon"
     [icon]="isDarkMode ? 'light_mode' : 'dark_mode'"
     (click)="toggleTheme()"
     ariaLabel="Toggle dark mode"
+  ></jb-button>
+  <jb-button
+    variant="icon"
+    icon="logout"
+    (click)="logout()"
+    ariaLabel="Logout"
   ></jb-button>
 </div>
 

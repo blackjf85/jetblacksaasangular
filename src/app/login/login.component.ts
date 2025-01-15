@@ -3,48 +3,24 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
-import { ButtonComponent } from '../../../libs/shared/ui-components/src/lib/ui-components';
+import {
+  ButtonComponent,
+  InputComponent,
+  CardComponent,
+} from '../../../libs/shared/ui-components/src/lib/ui-components';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ButtonComponent],
-  template: `
-    <div class="login-container">
-      <h2>Login</h2>
-      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            [(ngModel)]="credentials.email"
-            name="email"
-            required
-            autocomplete="email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            [(ngModel)]="credentials.password"
-            name="password"
-            required
-            autocomplete="current-password"
-          />
-        </div>
-        <jb-button type="submit" [disabled]="loading">
-          {{ loading ? 'Logging in...' : 'Login' }}
-        </jb-button>
-        <div *ngIf="errorMessage" class="error-message">
-          {{ errorMessage }}
-        </div>
-      </form>
-      <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
-    </div>
-  `,
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterLink,
+    ButtonComponent,
+    InputComponent,
+    CardComponent,
+  ],
+  templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
@@ -53,10 +29,15 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private authService: AuthService, private router: Router) {}
+  errors = {
+    email: '',
+    password: '',
+  };
 
   errorMessage: string | null = null;
   loading = false;
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   async onSubmit() {
     if (!this.credentials.email || !this.credentials.password) {
@@ -77,7 +58,6 @@ export class LoginComponent {
         throw new Error('Invalid email or password');
       }
 
-      // Redirect to home page after successful login
       this.router.navigate(['/']);
     } catch (error: unknown) {
       this.errorMessage =

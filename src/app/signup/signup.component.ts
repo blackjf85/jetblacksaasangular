@@ -3,12 +3,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
-import { ButtonComponent } from '../../../libs/shared/ui-components/src/lib/ui-components';
+import {
+  ButtonComponent,
+  CardComponent,
+  InputComponent,
+} from '../../../libs/shared/ui-components/src/lib/ui-components';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ButtonComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterLink,
+    ButtonComponent,
+    CardComponent,
+    InputComponent,
+  ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })
@@ -22,6 +33,14 @@ export class SignupComponent {
 
   errorMessage: string | null = null;
   loading = false;
+  errors: { [key: string]: string | null } = {
+    email: null,
+    password: null,
+  };
+
+  getError(key: string): string {
+    return this.errors[key] || '';
+  }
 
   async onSubmit() {
     if (!this.credentials.email || !this.credentials.password) {
