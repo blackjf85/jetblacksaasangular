@@ -11,6 +11,16 @@
     [value]="displayValue"
     (input)="onInput($event)"
     [attr.inputmode]="isPin ? 'none' : null"
+    [attr.autocomplete]="
+      autocomplete ||
+      (type === 'password'
+        ? isPin
+          ? 'one-time-code'
+          : 'current-password'
+        : inputMode === 'email'
+        ? 'username'
+        : null)
+    "
   />
   @if (errorMessage) {
   <div class="input-error">{{ errorMessage }}</div>

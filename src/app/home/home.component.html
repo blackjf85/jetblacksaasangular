@@ -50,13 +50,25 @@
 
   <div class="button-group">
     <h3>Text Input</h3>
-    <jb-input
-      type="number"
-      label="Enter your PIN"
-      placeholder="PIN"
-      [(value)]="demoInputValue"
-      [isPin]="true"
-    ></jb-input>
+    <form (ngSubmit)="onDemoSubmit($event)">
+      <input
+        type="text"
+        name="username"
+        autocomplete="username"
+        style="display: none"
+        aria-hidden="true"
+        tabindex="-1"
+      />
+      <jb-input
+        type="number"
+        label="Enter your PIN"
+        placeholder="PIN"
+        [(value)]="demoInputValue"
+        [isPin]="true"
+        autocomplete="new-password"
+        inputAutocomplete="new-password"
+      ></jb-input>
+    </form>
   </div>
 
   <div class="button-group">
@@ -71,12 +83,22 @@
 
   <div class="button-group">
     <h3>Password Input</h3>
-    <jb-input
-      type="password"
-      label="Password"
-      placeholder="Enter your password"
-      formControlName="password"
-    ></jb-input>
+    <form (ngSubmit)="onDemoSubmit($event)">
+      <input
+        type="text"
+        name="username"
+        autocomplete="username"
+        style="display: none"
+        aria-hidden="true"
+        tabindex="-1"
+      />
+      <jb-input
+        type="password"
+        label="Password"
+        placeholder="Enter your password"
+        formControlName="password"
+      ></jb-input>
+    </form>
   </div>
 
   <div class="button-group">

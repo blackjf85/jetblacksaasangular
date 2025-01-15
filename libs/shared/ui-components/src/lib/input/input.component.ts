@@ -31,6 +31,8 @@ export class InputComponent implements ControlValueAccessor {
   @Input() errorMessage: string | null = '';
   @Input() hasError = false;
   @Input() isPin = false;
+  @Input() inputMode?: string;
+  @Input() autocomplete?: string;
 
   private _value: string | number = '';
   displayValue = '';

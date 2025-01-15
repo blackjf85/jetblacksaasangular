@@ -10,7 +10,19 @@
       [hasError]="!!errors.email"
       [errorMessage]="errors.email"
       [disabled]="loading"
+      inputMode="email"
+      autocomplete="username"
     ></jb-input>
+
+    <!-- Hidden username field for password manager accessibility -->
+    <input
+      type="text"
+      name="username"
+      autocomplete="username"
+      style="display: none"
+      aria-hidden="true"
+      tabindex="-1"
+    />
 
     <jb-input
       type="password"

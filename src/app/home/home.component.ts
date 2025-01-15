@@ -45,4 +45,9 @@ export class HomeComponent {
       console.error('Logout failed:', error);
     }
   }
+
+  onDemoSubmit(event: Event) {
+    event.preventDefault();
+    console.log('Demo form submitted');
+  }
 }
