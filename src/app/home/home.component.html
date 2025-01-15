@@ -1,6 +1,12 @@
 <div class="floating-buttons">
   <jb-button
     variant="icon"
+    icon="info"
+    (click)="openModal()"
+    ariaLabel="Show info modal"
+  ></jb-button>
+  <jb-button
+    variant="icon"
     [icon]="isDarkMode ? 'light_mode' : 'dark_mode'"
     (click)="toggleTheme()"
     ariaLabel="Toggle dark mode"
@@ -12,6 +18,15 @@
     ariaLabel="Logout"
   ></jb-button>
 </div>
+
+<jb-modal [title]="'Information'" (close)="closeModal()" *ngIf="showModal">
+  <p class="mb-4">
+    This is an example modal demonstrating the modal component usage.
+  </p>
+  <div footer class="flex justify-end">
+    <jb-button variant="primary" (click)="closeModal()">Close</jb-button>
+  </div>
+</jb-modal>
 
 <jb-card header="Button Variants">
   <div class="button-group">
