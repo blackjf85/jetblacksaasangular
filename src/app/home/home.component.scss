@@ -1,0 +1,24 @@
+.theme-toggle {
+  position: fixed;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 1000;
+
+  jb-button {
+    background: transparent;
+    border: none;
+    padding: var(--spacing-xs);
+    border-radius: 50%;
+    transition: all var(--transition-duration);
+    color: var(--text);
+
+    &:hover {
+      background: var(--primary);
+      opacity: 0.9;
+    }
+  }
+}
+
+.button-group {
+  margin-bottom: var(--spacing-lg);
+}
